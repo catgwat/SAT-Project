@@ -16,6 +16,8 @@
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
     <None Include="Views\_ViewImports.cshtml" />
     <None Include="Views\_ViewStart.cshtml" />
+    <None Include="_Archive\css\.DS_Store" />
+    <None Include="_Archive\js\.DS_Store" />
   </ItemGroup>
 
   <ItemGroup>
