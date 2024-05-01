@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SAT.DATA.EF.Models.StudentStatus>
+
+@{
+    ViewData["Title"] = "Student Status";
+}
+
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="choose_taital">Student Status</h1>
+        <a asp-action="Create" class="btn btn-dark">Create New Student Status</a>
+    </div>
+</div>
+
+<div class="row col-md-10 offset-1">
+    <table class="table table-secondary table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ssname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ssdescription)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ssname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ssdescription)
+                </td>
+                <td>
+                        <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Ssid">Edit</a>
+                        <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.Ssid">Details</a>
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Ssid">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

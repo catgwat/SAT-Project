@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SAT.DATA.EF.Models.ScheduledClassStatus>
+
+@{
+    ViewData["Title"] = "Scheduled Class Status";
+}
+
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="choose_taital">Class Status</h1>
+        <a asp-action="Create" class="btn btn-dark">Create New Class Status</a>
+    </div>
+</div>
+
+<div class="row col-md-4 offset-4">
+    <table class="table table-secondary table-hover table-striped text-center">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Scsname)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Scsname)
+                </td>
+                <td>
+                        <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Scsid">Edit</a> 
+                        <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.Scsid">Details</a> 
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Scsid">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

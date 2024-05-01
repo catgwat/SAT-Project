@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SAT.DATA.EF.Models.ScheduledClass>
+
+@{
+    ViewData["Title"] = "Scheduled Classes";
+}
+
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="choose_taital">Scheduled Classes</h1>
+        <a asp-action="Create" class="btn btn-dark">Create New Scheduled Class</a>
+    </div>
+</div>
+
+<div class="row col-md-10 offset-1">
+    <table class="table table-secondary table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EndDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InstructorName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Location)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Course)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Scs)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                        <a asp-action="Details" asp-route-id="@item.ScheduledClassId">@Html.DisplayFor(modelItem => item.StartDate)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InstructorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.CourseDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Scs.Scsname)
+                </td>
+                <td>
+                        <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a>
+
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

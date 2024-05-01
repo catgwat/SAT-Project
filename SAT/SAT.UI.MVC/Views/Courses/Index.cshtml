@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SAT.DATA.EF.Models.Course>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="choose_taital">Courses</h1>
+        <a asp-action="Create" class="btn btn-dark">Create New Course</a>
+    </div>
+</div>
+
+<div class="row col-md-10 offset-1">
+    <table class="table table-secondary table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreditHours)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Curriculum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.CourseId">@Html.DisplayFor(modelItem => item.CourseName)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreditHours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Curriculum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> 
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

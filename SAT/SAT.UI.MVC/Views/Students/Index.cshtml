@@ -1,0 +1,99 @@
+﻿@model IEnumerable<SAT.DATA.EF.Models.Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="choose_taital">Students</h1>
+        <a asp-action="Create" class="btn btn-dark">Create New Student</a>
+    </div>
+</div>
+
+<div class="row col-md-10 offset-1">
+    <table class="table table-secondary table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Major)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.State)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ZipCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhotoUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ss)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.StudentId">@Html.DisplayFor(modelItem => item.FirstName)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Major)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhotoUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ss.Ssname)
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> 
+                     
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
