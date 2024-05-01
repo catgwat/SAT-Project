@@ -19,9 +19,9 @@
     <!-- style css -->
     <link rel="stylesheet" type="text/css" href="~/css/style.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
     <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="~/images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="~/css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
@@ -41,7 +41,7 @@
         <div class="header_main">
             <div class="mobile_menu">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="logo_mobile"><a href="index.html"><img src="images/logo.png"></a></div>
+                    <div class="logo_mobile"><a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png"></a></div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -74,14 +74,16 @@
                 </nav>
             </div>
             <div class="container-fluid">
-                <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+                <div class="logo"><a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png"></a></div>
                 <div class="menu_main">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
+                        <li class="active"><a class="nav-link" href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a class="nav-link" href="@Url.Action("Index", "Students")">Students</a></li>
+                        <li><a class="nav-link" href="@Url.Action("Index", "Courses")">Courses</a></li>
+                        <li><a class="nav-link" href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a></li>
+                        <li><a class="nav-link" href="@Url.Action("Index", "ScheduledClassStatus")">Scheduled Class Status</a></li>
+                        <li><a class="nav-link" href="@Url.Action("Index", "StudentStatus")">Student Status</a></li>
+                        <li><a class="nav-link" href="@Url.Action("Index", "Enrollments")">Enrollments</a></li>
                     </ul>
                 </div>
             </div>
@@ -99,17 +101,17 @@
                 <div class="subscribe_bt"><a href="#">Subscribe</a></div>
             </div>
             <div class="location_main">
-                <div class="call_text"><img src="images/call-icon.png"></div>
+                <div class="call_text"><img src="~/images/call-icon.png"></div>
                 <div class="call_text"><a href="#">Call +01 1234567890</a></div>
-                <div class="call_text"><img src="images/mail-icon.png"></div>
+                <div class="call_text"><img src="~/images/mail-icon.png"></div>
                 <div class="call_text"><a href="#">demo@gmail.com</a></div>
             </div>
             <div class="social_icon">
                 <ul>
-                    <li><a href="#"><img src="images/fb-icon.png"></a></li>
-                    <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-                    <li><a href="#"><img src="images/linkedin-icon.png"></a></li>
-                    <li><a href="#"><img src="images/instagram-icon.png"></a></li>
+                    <li><a href="#"><img src="~/images/fb-icon.png"></a></li>
+                    <li><a href="#"><img src="~/images/twitter-icon.png"></a></li>
+                    <li><a href="#"><img src="~/images/linkedin-icon.png"></a></li>
+                    <li><a href="#"><img src="~/images/instagram-icon.png"></a></li>
                 </ul>
             </div>
         </div>

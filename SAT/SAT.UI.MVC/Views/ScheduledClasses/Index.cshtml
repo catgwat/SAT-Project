@@ -16,6 +16,9 @@
         <thead>
             <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.Course)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.StartDate)
                 </th>
                 <th>
@@ -28,9 +31,6 @@
                     @Html.DisplayNameFor(model => model.Location)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Course)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.Scs)
                 </th>
                 <th></th>
@@ -40,7 +40,10 @@
     @foreach (var item in Model) {
             <tr>
                 <td>
-                        <a asp-action="Details" asp-route-id="@item.ScheduledClassId">@Html.DisplayFor(modelItem => item.StartDate)</a>
+                    <a asp-action="Details" asp-route-id="@item.ScheduledClassId">@Html.DisplayFor(modelItem => item.Course.CourseName)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.EndDate)
@@ -52,15 +55,12 @@
                     @Html.DisplayFor(modelItem => item.Location)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Course.CourseDescription)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Scs.Scsname)
                 </td>
                 <td>
-                        <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a>
 
-                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
                 </td>
             </tr>
     }

@@ -1,15 +1,17 @@
 ﻿@model SAT.DATA.EF.Models.Enrollment
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.Student.FirstName +  "'s Enrollment Details";
 }
 
-<h1>Details</h1>
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="h1">@Model.Student.FirstName @Model.Student.LastName's  Details</h1>
+    </div>
+</div>
 
 <div>
-    <h4>Enrollment</h4>
-    <hr />
-    <dl class="row">
+    @* <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.EnrollmentDate)
         </dt>
@@ -28,9 +30,23 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Student.Email)
         </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.EnrollmentId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    </dl> *@
+    <div class="col-md-4 offset-md-4">
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.EnrollmentDate):</strong>
+            @Html.DisplayFor(model => model.EnrollmentDate)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.ScheduledClass):</strong>
+            @Html.DisplayNameFor(model => model.ScheduledClass.Course.CourseName)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.Student):</strong>
+            @Html.DisplayNameFor(model => model.Student.FirstName + model.Student.LastName)
+        </p>
+        <p class="h3 mt-5">
+            <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.EnrollmentId">Edit</a>
+            <a class="btn btn-secondary" asp-action="Index">Back to Student Statuses</a>
+        </p>
+    </div>
 </div>

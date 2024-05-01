@@ -4,12 +4,14 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="h1">@Model.Course.CourseName Details</h1>
+    </div>
+</div>
 
-<div>
-    <h4>ScheduledClass</h4>
-    <hr />
-    <dl class="row">
+<div class="row mb-3">
+    @* <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.StartDate)
         </dt>
@@ -46,9 +48,36 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Scs.Scsname)
         </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ScheduledClassId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    </dl> *@
+
+    <div class="col-md-4 offset-md-4">
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.Course):</strong>
+            @Html.DisplayFor(model => model.Course.CourseDescription)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.StartDate)</strong>
+            <span>@Html.DisplayFor(model => model.StartDate)</span>
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.EndDate):</strong>
+            @Html.DisplayFor(model => model.EndDate)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.InstructorName):</strong>
+            @Html.DisplayFor(model => model.InstructorName)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.Location):</strong>
+            @Html.DisplayFor(model => model.Location)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.Scs):</strong>
+            @Html.DisplayFor(model => model.Scs.Scsname)
+        </p>
+        <p class="h3 mt-5">
+            <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.ScheduledClassId">Edit</a>
+            <a class="btn btn-secondary" asp-action="Index">Back to Scheduled Classes</a>
+        </p>
+    </div>
 </div>
