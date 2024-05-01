@@ -8,14 +8,163 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\_OriginalLayout.cshtml" />
+    <Content Remove="wwwroot\about.html" />
+    <Content Remove="wwwroot\blog.html" />
+    <Content Remove="wwwroot\contact.html" />
+    <Content Remove="wwwroot\css\animate.min.css" />
+    <Content Remove="wwwroot\css\bootstrap-grid.css" />
+    <Content Remove="wwwroot\css\bootstrap-grid.css.map" />
+    <Content Remove="wwwroot\css\bootstrap-grid.min.css" />
+    <Content Remove="wwwroot\css\bootstrap-grid.min.css.map" />
+    <Content Remove="wwwroot\css\bootstrap-reboot.css" />
+    <Content Remove="wwwroot\css\bootstrap-reboot.css.map" />
+    <Content Remove="wwwroot\css\bootstrap-reboot.min.css" />
+    <Content Remove="wwwroot\css\bootstrap-reboot.min.css.map" />
+    <Content Remove="wwwroot\css\bootstrap.css" />
+    <Content Remove="wwwroot\css\bootstrap.css.map" />
+    <Content Remove="wwwroot\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\css\bootstrap.min.css.map" />
+    <Content Remove="wwwroot\css\default-skin.css" />
+    <Content Remove="wwwroot\css\font-awesome.min.css" />
+    <Content Remove="wwwroot\css\icomoon.css" />
+    <Content Remove="wwwroot\css\jquery-ui.css" />
+    <Content Remove="wwwroot\css\jquery.fancybox.min.css" />
+    <Content Remove="wwwroot\css\jquery.mCustomScrollbar.min.css" />
+    <Content Remove="wwwroot\css\meanmenu.css" />
+    <Content Remove="wwwroot\css\nice-select.css" />
+    <Content Remove="wwwroot\css\normalize.css" />
+    <Content Remove="wwwroot\css\owl.carousel.min.css" />
+    <Content Remove="wwwroot\css\responsive.css" />
+    <Content Remove="wwwroot\css\slick.css" />
+    <Content Remove="wwwroot\css\style.css" />
+    <Content Remove="wwwroot\images\about-img.png" />
+    <Content Remove="wwwroot\images\banner-bg.png" />
+    <Content Remove="wwwroot\images\blog-bg.png" />
+    <Content Remove="wwwroot\images\blog-mobile-bg.png" />
+    <Content Remove="wwwroot\images\call-icon.png" />
+    <Content Remove="wwwroot\images\client-img.png" />
+    <Content Remove="wwwroot\images\client-img1.png" />
+    <Content Remove="wwwroot\images\fb-icon.png" />
+    <Content Remove="wwwroot\images\footer-bg.png" />
+    <Content Remove="wwwroot\images\footer-mobile-bg.png" />
+    <Content Remove="wwwroot\images\img-1.png" />
+    <Content Remove="wwwroot\images\img-2.png" />
+    <Content Remove="wwwroot\images\img-3.png" />
+    <Content Remove="wwwroot\images\instagram-icon.png" />
+    <Content Remove="wwwroot\images\linkedin-icon.png" />
+    <Content Remove="wwwroot\images\logo.png" />
+    <Content Remove="wwwroot\images\mail-icon.png" />
+    <Content Remove="wwwroot\images\map-icon.png" />
+    <Content Remove="wwwroot\images\mobile-bg.png" />
+    <Content Remove="wwwroot\images\play-icon.png" />
+    <Content Remove="wwwroot\images\quick-icon.png" />
+    <Content Remove="wwwroot\images\twitter-icon.png" />
+    <Content Remove="wwwroot\images\youtub-icon.png" />
+    <Content Remove="wwwroot\index.html" />
+    <Content Remove="wwwroot\js\bootstrap.bundle.js" />
+    <Content Remove="wwwroot\js\bootstrap.bundle.js.map" />
+    <Content Remove="wwwroot\js\bootstrap.bundle.min.js" />
+    <Content Remove="wwwroot\js\bootstrap.bundle.min.js.map" />
+    <Content Remove="wwwroot\js\bootstrap.js" />
+    <Content Remove="wwwroot\js\bootstrap.js.map" />
+    <Content Remove="wwwroot\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\js\bootstrap.min.js.map" />
+    <Content Remove="wwwroot\js\custom.js" />
+    <Content Remove="wwwroot\js\jquery-3.0.0.min.js" />
+    <Content Remove="wwwroot\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Remove="wwwroot\js\jquery.min.js" />
+    <Content Remove="wwwroot\js\jquery.validate.js" />
+    <Content Remove="wwwroot\js\modernizer.js" />
+    <Content Remove="wwwroot\js\plugin.js" />
+    <Content Remove="wwwroot\js\popper.min.js" />
+    <Content Remove="wwwroot\js\slider-setting.js" />
+    <Content Remove="wwwroot\services.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_OriginalLayout.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
     <None Include="Views\_ViewImports.cshtml" />
     <None Include="Views\_ViewStart.cshtml" />
+    <None Include="wwwroot\about.html" />
+    <None Include="wwwroot\blog.html" />
+    <None Include="wwwroot\contact.html" />
+    <None Include="wwwroot\css\.DS_Store" />
+    <None Include="wwwroot\css\animate.min.css" />
+    <None Include="wwwroot\css\bootstrap-grid.css" />
+    <None Include="wwwroot\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\css\bootstrap-grid.min.css" />
+    <None Include="wwwroot\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\css\bootstrap-reboot.css" />
+    <None Include="wwwroot\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\css\bootstrap-reboot.min.css" />
+    <None Include="wwwroot\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\css\bootstrap.css" />
+    <None Include="wwwroot\css\bootstrap.css.map" />
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\css\default-skin.css" />
+    <None Include="wwwroot\css\font-awesome.min.css" />
+    <None Include="wwwroot\css\icomoon.css" />
+    <None Include="wwwroot\css\jquery-ui.css" />
+    <None Include="wwwroot\css\jquery.fancybox.min.css" />
+    <None Include="wwwroot\css\jquery.mCustomScrollbar.min.css" />
+    <None Include="wwwroot\css\meanmenu.css" />
+    <None Include="wwwroot\css\nice-select.css" />
+    <None Include="wwwroot\css\normalize.css" />
+    <None Include="wwwroot\css\owl.carousel.min.css" />
+    <None Include="wwwroot\css\responsive.css" />
+    <None Include="wwwroot\css\slick.css" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\images\about-img.png" />
+    <None Include="wwwroot\images\banner-bg.png" />
+    <None Include="wwwroot\images\blog-bg.png" />
+    <None Include="wwwroot\images\blog-mobile-bg.png" />
+    <None Include="wwwroot\images\call-icon.png" />
+    <None Include="wwwroot\images\client-img.png" />
+    <None Include="wwwroot\images\client-img1.png" />
+    <None Include="wwwroot\images\fb-icon.png" />
+    <None Include="wwwroot\images\footer-bg.png" />
+    <None Include="wwwroot\images\footer-mobile-bg.png" />
+    <None Include="wwwroot\images\img-1.png" />
+    <None Include="wwwroot\images\img-2.png" />
+    <None Include="wwwroot\images\img-3.png" />
+    <None Include="wwwroot\images\instagram-icon.png" />
+    <None Include="wwwroot\images\linkedin-icon.png" />
+    <None Include="wwwroot\images\logo.png" />
+    <None Include="wwwroot\images\mail-icon.png" />
+    <None Include="wwwroot\images\map-icon.png" />
+    <None Include="wwwroot\images\mobile-bg.png" />
+    <None Include="wwwroot\images\play-icon.png" />
+    <None Include="wwwroot\images\quick-icon.png" />
+    <None Include="wwwroot\images\twitter-icon.png" />
+    <None Include="wwwroot\images\youtub-icon.png" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\js\.DS_Store" />
+    <None Include="wwwroot\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\js\bootstrap.js" />
+    <None Include="wwwroot\js\bootstrap.js.map" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\js\custom.js" />
+    <None Include="wwwroot\js\jquery-3.0.0.min.js" />
+    <None Include="wwwroot\js\jquery.mCustomScrollbar.concat.min.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\jquery.validate.js" />
+    <None Include="wwwroot\js\modernizer.js" />
+    <None Include="wwwroot\js\plugin.js" />
+    <None Include="wwwroot\js\popper.min.js" />
+    <None Include="wwwroot\js\slider-setting.js" />
+    <None Include="wwwroot\services.html" />
     <None Include="_Archive\css\.DS_Store" />
     <None Include="_Archive\js\.DS_Store" />
   </ItemGroup>
@@ -31,6 +180,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SAT.DATA.EF\SAT.DATA.EF.csproj" />
   </ItemGroup>
 
 </Project>
