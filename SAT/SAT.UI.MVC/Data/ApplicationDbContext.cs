@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SAT.UI.MVC.Models;
 
 namespace SAT.UI.MVC.Data
 {
@@ -9,5 +10,6 @@ namespace SAT.UI.MVC.Data
             : base(options)
         {
         }
+        public DbSet<SAT.UI.MVC.Models.ContactViewModel>? ContactViewModel { get; set; }
     }
 }

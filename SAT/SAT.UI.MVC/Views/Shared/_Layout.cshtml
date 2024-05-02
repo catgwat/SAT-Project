@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -81,12 +84,18 @@
                 <div class="menu_main">
                     <ul>
                         <li class="active"><a class="nav-link" href="@Url.Action("Index", "Home")">Home</a></li>
-                        <li><a class="nav-link" href="@Url.Action("Index", "Students")">Students</a></li>
+                        @if (User.IsInRole("Admin"))
+                        {                            
+                            <li><a class="nav-link" href="@Url.Action("Index", "Students")">Students</a></li>
+                            <li><a class="nav-link" href="@Url.Action("Index", "Enrollments")">Enrollments</a></li>
+                            <li><a class="nav-link" href="@Url.Action("Index", "StudentStatus")">Student Status</a></li>
+                            <li><a class="nav-link" href="@Url.Action("Index", "ScheduledClassStatus")">Scheduled Class Status</a></li>
+                        }
                         <li><a class="nav-link" href="@Url.Action("Index", "Courses")">Courses</a></li>
-                        <li><a class="nav-link" href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a></li>
-                        <li><a class="nav-link" href="@Url.Action("Index", "ScheduledClassStatus")">Scheduled Class Status</a></li>
-                        <li><a class="nav-link" href="@Url.Action("Index", "StudentStatus")">Student Status</a></li>
-                        <li><a class="nav-link" href="@Url.Action("Index", "Enrollments")">Enrollments</a></li>
+                        @if (signInManager.IsSignedIn(User))
+                        {                            
+                            <li><a class="nav-link" href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a></li>
+                        }
                         <li><partial name="_LoginPartial" /></li>
                     </ul>
                 </div>

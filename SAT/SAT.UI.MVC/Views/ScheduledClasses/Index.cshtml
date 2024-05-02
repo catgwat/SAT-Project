@@ -7,7 +7,10 @@
 <div class="choose_section layout_padding">
     <div class="container text-center">
         <h1 class="choose_taital">Scheduled Classes</h1>
-        <a asp-action="Create" class="btn btn-dark">Create New Scheduled Class</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-action="Create" class="btn btn-dark">Create New Scheduled Class</a>
+        }
     </div>
 </div>
 
@@ -58,9 +61,11 @@
                     @Html.DisplayFor(modelItem => item.Scs.Scsname)
                 </td>
                 <td>
+                @if (User.IsInRole("Admin"))
+                {
                     <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a>
-
                     <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
+                }
                 </td>
             </tr>
     }

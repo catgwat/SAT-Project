@@ -7,7 +7,10 @@
 <div class="choose_section layout_padding">
     <div class="container text-center">
         <h1 class="choose_taital">Courses</h1>
-        <a asp-action="Create" class="btn btn-dark">Create New Course</a>
+        @if (User.IsInRole("Admin"))
+        {            
+            <a asp-action="Create" class="btn btn-dark">Create New Course</a>
+        }
     </div>
 </div>
 
@@ -58,8 +61,11 @@
                     @Html.DisplayFor(modelItem => item.IsActive)
                 </td>
                 <td>
-                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> 
-                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
+                    @if (User.IsInRole("Admin"))
+                    {                            
+                        <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> 
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
+                    }
                 </td>
             </tr>
     }
