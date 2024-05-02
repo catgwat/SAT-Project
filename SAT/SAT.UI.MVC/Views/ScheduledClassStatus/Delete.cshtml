@@ -1,27 +1,36 @@
 ﻿@model SAT.DATA.EF.Models.ScheduledClassStatus
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete " + Model.Scsname;
 }
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="h1">@ViewData["Title"]</h1>
+        <h3 class="alert alert-danger">Are you sure you want to delete @Model.Scsname? This action CANNOT be undone!</h3>
+    </div>
+</div>
 
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ScheduledClassStatus</h4>
-    <hr />
-    <dl class="row">
+<div class="row mb-3">
+    @* <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Scsname)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Scsname)
         </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Scsid" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    </dl> *@
+
+    <div class="col-md-4 offset-md-4">
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.Scsname):</strong>
+            @Html.DisplayFor(model => model.Scsname)
+        </p>
+        <p class="h3 mt-5">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Scsid" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a class="btn btn-secondary" asp-action="Index">Back to Scheduled Class Statuses</a>
+            </form>
+        </p>
+    </div>
 </div>

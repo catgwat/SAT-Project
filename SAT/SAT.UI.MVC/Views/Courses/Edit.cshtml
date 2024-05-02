@@ -1,15 +1,17 @@
 ﻿@model SAT.DATA.EF.Models.Course
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit " + Model.CourseName;
 }
 
-<h1>Edit</h1>
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="choose_taital">@ViewData["Title"]</h1>
+    </div>
+</div>
 
-<h4>Course</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 offset-3">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CourseId" />
@@ -45,13 +47,10 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="Index">Back to Courses</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

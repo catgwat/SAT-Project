@@ -1,20 +1,22 @@
 ﻿@model SAT.DATA.EF.Models.ScheduledClass
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit " + Model.InstructorName + "'s Scheduled Class";
 }
 
-<h1>Edit</h1>
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="choose_taital">@ViewData["Title"]</h1>
+    </div>
+</div>
 
-<h4>ScheduledClass</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 offset-3">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ScheduledClassId" />
             <div class="form-group">
-                <label asp-for="CourseId" class="control-label"></label>
+                <label asp-for="CourseId" class="control-label">Course</label>
                 <select asp-for="CourseId" class="form-control" asp-items="ViewBag.CourseId"></select>
                 <span asp-validation-for="CourseId" class="text-danger"></span>
             </div>
@@ -39,19 +41,16 @@
                 <span asp-validation-for="Location" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Scsid" class="control-label"></label>
+                <label asp-for="Scsid" class="control-label">Class Status</label>
                 <select asp-for="Scsid" class="form-control" asp-items="ViewBag.Scsid"></select>
                 <span asp-validation-for="Scsid" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-secondary mx-4" asp-action="Index">Back to Scheduled Classes</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -1,16 +1,18 @@
 ﻿@model SAT.DATA.EF.Models.ScheduledClass
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete Scheduled Class " + Model.Course.CourseName;
 }
 
-<h1>Delete</h1>
+<div class="choose_section layout_padding">
+    <div class="container text-center">
+        <h1 class="h1">@ViewData["Title"]</h1>
+        <h3 class="alert alert-danger">Are you sure you want to delete @Model.Course.CourseName? This action CANNOT be undone!</h3>
+    </div>
+</div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ScheduledClass</h4>
-    <hr />
-    <dl class="row">
+<div class="row mb-3">
+    @* <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.StartDate)
         </dt>
@@ -39,7 +41,7 @@
             @Html.DisplayNameFor(model => model.Course)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Course.CourseDescription)
+            @Html.DisplayFor(model => model.Course.CourseName)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Scs)
@@ -47,11 +49,39 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Scs.Scsname)
         </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="ScheduledClassId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    </dl> *@
+
+    <div class="col-md-4 offset-md-4">
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.Course):</strong>
+            @Html.DisplayFor(model => model.Course.CourseDescription)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.StartDate)</strong>
+            <span>@Html.DisplayFor(model => model.StartDate)</span>
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.EndDate):</strong>
+            @Html.DisplayFor(model => model.EndDate)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.InstructorName):</strong>
+            @Html.DisplayFor(model => model.InstructorName)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.Location):</strong>
+            @Html.DisplayFor(model => model.Location)
+        </p>
+        <p class="h3">
+            <strong>@Html.DisplayNameFor(model => model.Scs):</strong>
+            @Html.DisplayFor(model => model.Scs.Scsname)
+        </p>
+        <p class="h3 mt-5">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="ScheduledClassId" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a class="btn btn-secondary" asp-action="Index">Back to Scheduled Classes</a>
+            </form>
+        </p>
+    </div>
 </div>
