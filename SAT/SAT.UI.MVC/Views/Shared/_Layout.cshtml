@@ -69,6 +69,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="@Url.Action("Index", "Enrollments")">Enrollments</a>
                             </li>
+                            <li class="nav-item">
+                                <partial name="_LoginPartial" />
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -84,6 +87,7 @@
                         <li><a class="nav-link" href="@Url.Action("Index", "ScheduledClassStatus")">Scheduled Class Status</a></li>
                         <li><a class="nav-link" href="@Url.Action("Index", "StudentStatus")">Student Status</a></li>
                         <li><a class="nav-link" href="@Url.Action("Index", "Enrollments")">Enrollments</a></li>
+                        <li><partial name="_LoginPartial" /></li>
                     </ul>
                 </div>
             </div>
