@@ -98,6 +98,7 @@ namespace SAT.DATA.EF
         [StringLength(500)]
         [DataType(DataType.MultilineText)]
         [UIHint("Multiline text")]
+        [Display(Name = "Course Description")]
         public string CourseDescription { get; set; } = null!;
 
         [Required]
@@ -122,7 +123,7 @@ namespace SAT.DATA.EF
     {
         public int EnrollmentId { get; set; }
 
-        [Required]
+        
         [Display(Name = "Student Id")]
         public int StudentId { get; set; }
 
