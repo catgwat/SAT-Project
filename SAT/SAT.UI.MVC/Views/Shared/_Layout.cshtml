@@ -96,6 +96,18 @@
                         {                            
                             <li><a class="nav-link" href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a></li>
                         }
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Admin <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li id="admin"><a asp-action="ListUsers" asp-controller="Administration">Users</a></li>
+                                    <li id="admin"><a asp-action="ListRoles" asp-controller="Administration">Roles</a></li>
+                                </ul>
+                            </li>
+                        }
+
                         <li><partial name="_LoginPartial" /></li>
                     </ul>
                 </div>

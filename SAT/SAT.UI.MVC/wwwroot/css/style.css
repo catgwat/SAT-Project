@@ -298,7 +298,7 @@ button {
     margin: 0 auto;
 }
 
-.menu_main ul {
+.menu_main ul:not(.dropdown-menu) {
     margin: 0px;
     padding: 0px;
     list-style: none;
@@ -1012,4 +1012,13 @@ button {
 
 .copyright_text a:hover {
     color: #e27141;
+}
+
+/* Custom Styling */
+#admin a {
+    color: #000;
+}
+
+#admin a:hover {
+    color: #fff;
 }
