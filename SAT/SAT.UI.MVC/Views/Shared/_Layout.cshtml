@@ -31,11 +31,13 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet">
     <!-- owl stylesheets -->
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
           media="screen">
+
 </head>
 
 <body>
@@ -44,7 +46,7 @@
         <div class="header_main">
             <div class="mobile_menu">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="logo_mobile"><a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png"></a></div>
+                    <div id="Logo" class="logo_mobile"><a href="@Url.Action("Index", "Home")">Galactic Academy</a></div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -54,23 +56,32 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("Index", "Students")">Students</a>
-                            </li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Index", "Students")">Students</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Index", "Enrollments")">Enrollments</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Index", "StudentStatus")">Student Status</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Index", "ScheduledClassStatus")">Scheduled Class Status</a>
+                                </li>
+                            }
                             <li class="nav-item">
                                 <a class="nav-link" href="@Url.Action("Index", "Courses")">Courses</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("Index", "ScheduledClassStatus")">Scheduled Class Status</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("Index", "StudentStatus")">Student Status</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("Index", "Enrollments")">Enrollments</a>
+                            @if (signInManager.IsSignedIn(User))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a>
+                                </li>
+                            }
+                            <li>
+                                <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact Us</a>
                             </li>
                             <li class="nav-item">
                                 <partial name="_LoginPartial" />
@@ -80,7 +91,7 @@
                 </nav>
             </div>
             <div class="container-fluid">
-                <div class="logo"><a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png"></a></div>
+                <div id="Logo" class="logo"><a href="@Url.Action("Index", "Home")">Galactic Academy</a></div>
                 <div class="menu_main">
                     <ul>
                         <li class="active"><a class="nav-link" href="@Url.Action("Index", "Home")">Home</a></li>
@@ -107,7 +118,7 @@
                                 </ul>
                             </li>
                         }
-
+                        <li><a class="nav-link" href="@Url.Action("Contact", "Home")">Contact Us</a></li>
                         <li><partial name="_LoginPartial" /></li>
                     </ul>
                 </div>
@@ -118,30 +129,26 @@
 
     @RenderBody()
     
-    <!-- FOOTER section start -->
-    <div class="footer_section layout_padding">
+   <!-- FOOTER section start -->
+    <div class="footer_section ">
         <div class="container">
-            <div class="input_btn_main">
-                <input type="text" class="mail_text" placeholder="Enter your email" name="Enter your email">
-                <div class="subscribe_bt"><a href="#">Subscribe</a></div>
-            </div>
             <div class="location_main">
-                <div class="call_text"><img src="~/images/call-icon.png"></div>
-                <div class="call_text"><a href="#">Call +01 1234567890</a></div>
-                <div class="call_text"><img src="~/images/mail-icon.png"></div>
-                <div class="call_text"><a href="#">demo@gmail.com</a></div>
-            </div>
-            <div class="social_icon">
-                <ul>
-                    <li><a href="#"><img src="~/images/fb-icon.png"></a></li>
-                    <li><a href="#"><img src="~/images/twitter-icon.png"></a></li>
-                    <li><a href="#"><img src="~/images/linkedin-icon.png"></a></li>
-                    <li><a href="#"><img src="~/images/instagram-icon.png"></a></li>
-                </ul>
+                <h3 id="FooterTitle">Helpful Links</h3>
+                    <div class="call_text"><a href=@Url.Action("Index", "Home")>Home</a></div>
+                    <div class="call_text"><a href=@Url.Action("Index", "Courses")>Courses</a></div>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class="call_text"><a class="nav-link" href="@Url.Action("Index", "Students")">Students</a></div>
+                        <div class="call_text"><a class="nav-link" href="@Url.Action("Index", "Enrollments")">Enrollments</a></div>
+                        <div class="call_text"><a class="nav-link" href="@Url.Action("Index", "StudentStatus")">Student Status</a></div>
+                        <div class="call_text"><a class="nav-link" href="@Url.Action("Index", "ScheduledClassStatus")">Scheduled Class Status</a></div>
+                    }
             </div>
         </div>
     </div>
-    <!-- footer section end -->
+    <!-- footer section end --> 
+    
     <!-- copyright section start -->
     <div class="copyright_section">
         <div class="container">

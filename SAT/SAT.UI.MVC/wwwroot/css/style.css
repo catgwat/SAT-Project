@@ -10,6 +10,7 @@
     src: url("../fonts/BalooChettan-Regular.ttf");
     src: url("../fonts/BalooChettan-Regular.ttf");
 }
+@import url('https://fonts.cdnfonts.com/css/star-wars');
 
 
 /*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
@@ -231,7 +232,7 @@ button {
 .header_section {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg.png);
+    background-image: url(../images/Galaxy.jpg);
     height: auto;
     background-size: 100%;
     padding: 0px 0px 20px 0px;
@@ -352,6 +353,17 @@ button {
     width: 100%;
     float: left;
     padding-bottom: 305px;
+    
+}
+
+#slide1 {
+    background-image: url(../images/School.jpeg)
+}
+#slide2 {
+    background-image: url(../images/DeathStar.jpeg)
+}
+#slide3 {
+    background-image: url(../images/Landscape1.jpg)
 }
 
 .banner_taital {
@@ -896,12 +908,10 @@ button {
 .footer_section {
     width: 100%;
     float: left;
-    background-image: url(../images/footer-bg.png);
+    background-image: url(../images/Galaxy.jpg);
     height: auto;
-    padding-top: 250px;
-    background-size: 100% 100%;
-    padding-bottom: 30px;
     background-repeat: no-repeat;
+    padding-bottom: 10px;
 }
 
 .input_btn_main {
@@ -1022,3 +1032,16 @@ button {
 #admin a:hover {
     color: #fff;
 }
+
+#Logo a {
+    color: #fff;
+    font-size: 3em;
+    font-family: 'Star Wars', sans-serif !important;
+}
+
+#FooterTitle {
+    color: #fff;
+}
+
+
+
