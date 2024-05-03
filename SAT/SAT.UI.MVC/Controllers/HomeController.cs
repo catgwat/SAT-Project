@@ -61,7 +61,7 @@ namespace SAT.UI.MVC.Controllers
                     }
                     catch (Exception ex)
                     {
-                        ViewBag.ErrorMessage = $"There was an error senting the email. Please try again later.\nError info: {ex.StackTrace}";
+                        ViewBag.ErrorMessage = $"There was an error sending the email. Please try again later.\nError info: {ex.StackTrace}";
                         return View(cvm);
                     }
                 }
